@@ -1,5 +1,5 @@
 {
-  "install": "ls; pip3 install --user -r requirements.txt; ls",
+  "install": "; pip3 install --user -r requirements.txt;",
   "start": "uvicorn main:app",
   "watch": {
     "ignore": [
