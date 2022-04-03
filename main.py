@@ -13,12 +13,13 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
-
  
 app.config['MONGODB_SETTINGS'] = {
-    'db': 'your_database',
-    'host': 'localhost',
-    'port': 27017
+    'db': 'mongodb',
+    'user' : 'mongo',
+    'password' :'BURA5605FUmEMhCXtkkv' ,
+    'host': 'containers-us-west-27.railway.app',
+    'port': 7720
 }
 db = MongoEngine()
 db.init_app(app)
