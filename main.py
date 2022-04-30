@@ -15,8 +15,13 @@ templates = Jinja2Templates(directory="public")
 # def read_root():
 #     return {"Hello": "Hello from FastAPI!"}
 
-@app.get("/items/{item_id}")
+@app.get("/images/{item_id}")
 def read_item(item_id: int, q: str = None):
+   foo = [
+     {42: 'aaa', 2.78: 'bbb', True: 'ccc'},
+    {42: 'aaa', 2.78: 'bbb', True: 'ccd'},
+      ]
+print(foo[1])
   return {"item_id": item_id, "q": q}
   
 @app.get("/")
