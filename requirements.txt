@@ -1,2 +1,6 @@
 uvicorn
 fastapi
+
+
+#for template  #new
+jinja2 
