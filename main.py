@@ -19,6 +19,5 @@ def read_item(item_id: int, q: str = None):
   
 @app.get("/")
 async def home(request: Request):
-   print("request %f", request )
-   print( request.body )
+   
    return templates.TemplateResponse("index.html",{"request":request})
