@@ -21,8 +21,8 @@ def read_item(item_id: int, ):
     print(foo[item_id])    
     return {"item_id": item_id, "item": foo[item_id] }
   
-@app.get("/images/list")
-def read_item(request: Request ): 
+@app.get("/images/")
+def read_list(): 
     return {"items": foo }
   
 @app.get("/")
