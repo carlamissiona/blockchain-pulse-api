@@ -10,6 +10,9 @@ app = FastAPI()
 
 templates = Jinja2Templates(directory="public")
 foo = [{'image': 'Cassini', 'link': 'https://apod.nasa.gov/apod/image/1112/saturnstorm2_cassini_900.jpg', 'alt': 'A picture of UFO'},{'image': 'Cone Hubblesmidt', 'link': 'https://apod.nasa.gov/apod/image/1703/cone_hubbleschmidt_960.jpg', 'alt': 'A picture of UFO'},{'image': 'Jupiter Io Bianconi Collage', 'link': 'https://apod.nasa.gov/apod/image/1211/JupIoBianconiCollage.jpg', 'alt': 'A picture of UFO'},{'image': 'aaa', 'link': 'https://apod.nasa.gov/apod/image/9807/triple_jet.gif', 'alt': 'A picture of UFO'}, ]
+renters = [{'image': 'Cassini', 'link': 'https://apod.nasa.gov/apod/image/1112/saturnstorm2_cassini_900.jpg', 'alt': 'A picture of UFO'},{'image': 'Cone Hubblesmidt', 'link': 'https://apod.nasa.gov/apod/image/1703/cone_hubbleschmidt_960.jpg', 'alt': 'A picture of UFO'},{'image': 'Jupiter Io Bianconi Collage', 'link': 'https://apod.nasa.gov/apod/image/1211/JupIoBianconiCollage.jpg', 'alt': 'A picture of UFO'},{'image': 'aaa', 'link': 'https://apod.nasa.gov/apod/image/9807/triple_jet.gif', 'alt': 'A picture of UFO'}, ]
+equipments = [{'image': 'Cassini', 'link': 'https://apod.nasa.gov/apod/image/1112/saturnstorm2_cassini_900.jpg', 'alt': 'A picture of UFO'},{'image': 'Cone Hubblesmidt', 'link': 'https://apod.nasa.gov/apod/image/1703/cone_hubbleschmidt_960.jpg', 'alt': 'A picture of UFO'},{'image': 'Jupiter Io Bianconi Collage', 'link': 'https://apod.nasa.gov/apod/image/1211/JupIoBianconiCollage.jpg', 'alt': 'A picture of UFO'},{'image': 'aaa', 'link': 'https://apod.nasa.gov/apod/image/9807/triple_jet.gif', 'alt': 'A picture of UFO'}, ]
+interviews = [{'image': 'Cassini', 'link': 'https://apod.nasa.gov/apod/image/1112/saturnstorm2_cassini_900.jpg', 'alt': 'A picture of UFO'},{'image': 'Cone Hubblesmidt', 'link': 'https://apod.nasa.gov/apod/image/1703/cone_hubbleschmidt_960.jpg', 'alt': 'A picture of UFO'},{'image': 'Jupiter Io Bianconi Collage', 'link': 'https://apod.nasa.gov/apod/image/1211/JupIoBianconiCollage.jpg', 'alt': 'A picture of UFO'},{'image': 'aaa', 'link': 'https://apod.nasa.gov/apod/image/9807/triple_jet.gif', 'alt': 'A picture of UFO'}, ]
 
 # @app.get("/")
 # def read_root():
@@ -24,6 +27,30 @@ def read_item(item_id: int, ):
 @app.get("/images/")
 def read_list(): 
     return {"items": foo }
+
+
+@app.get("/interviews/")
+def list_interviews(): 
+    return {"items": interviews }
+  
+@app.get("/renters/")
+def list_renters(): 
+    return {"items": renters }
+  
+@app.get("/equipments/")
+def list_equipment(): 
+    return {"items": equipment }
+
+@app.get("/equipments/{item_id}")
+def read_equipment(): 
+    return {"items": foo }
+  
+  
+@app.get("/equipments/add")
+def list_renters(request: Request):
+  # add equipment & list all equipment
+    return {"items": equipments }
+  
   
 @app.get("/")
 async def home(request: Request):
