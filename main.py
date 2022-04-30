@@ -6,7 +6,7 @@ from fastapi import Request
 app = FastAPI()
 
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="public")
 
 
 # @app.get("/")
@@ -15,9 +15,10 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+  return {"item_id": item_id, "q": q}
   
 @app.get("/")
 async def home(request: Request):
-	return templates.TemplateResponse("public/index.html",{"request":request})
-	
+   print("request %f", request )
+   print( request.body )
+   return templates.TemplateResponse("index.html",{"request":request})
