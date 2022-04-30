@@ -22,10 +22,8 @@ def read_item(item_id: int, ):
     return {"item_id": item_id, "item": foo[item_id] }
   
 @app.get("/images/list")
-def read_item(item_id: int, ):
-    
-    print(foo[item_id])    
-    return {"item_id": item_id, "item": foo[item_id] }
+def read_item(request: Request ): 
+    return {"items": foo }
   
 @app.get("/")
 async def home(request: Request):
